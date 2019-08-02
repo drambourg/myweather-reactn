@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import About from "./Component/About";
+import Search from "./Component/Search";
 
 export default function App() {
-  return (
+    return (
+        <View style={styles.main_container}>
+            <Search/>
+        </View>
 
-      <About />
-  );
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create( {
+  main_container: {
+    marginTop : 50
+  }
+
+
+})

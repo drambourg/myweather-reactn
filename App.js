@@ -1,21 +1,21 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import About from "./Component/About";
-import Search from "./Component/Search";
+import {SafeAreaView} from 'react-navigation';
+import Navigation from './Navigation/Navigation';
 
 export default function App() {
     return (
-        <View style={styles.main_container}>
-            <Search/>
-        </View>
+        <SafeAreaView style={styles.main_container}>
+            <Navigation/>
+        </SafeAreaView>
 
     );
 }
 
-const styles = StyleSheet.create( {
-  main_container: {
-    marginTop : 50
-  }
+const styles = StyleSheet.create({
+    main_container: {
+        flex: 1,
+    }
 
 
 })

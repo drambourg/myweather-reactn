@@ -1,7 +1,9 @@
 import React from 'react'
-import {TextInput, StyleSheet, View} from 'react-native'
+import {TextInput, StyleSheet, View, Button} from 'react-native'
+import mainStyle from '../Styles/Style'
+import {createStackNavigator} from 'react-navigation'
 
-export default class Search extends React.Component {
+class Search extends React.Component {
 
     constructor(props) {
         super(props)
@@ -16,25 +18,28 @@ export default class Search extends React.Component {
         })
     }
 
+    submit() {
+        this.props.navigation.navigate('Result',
+            {
+                city: this.state.city,
+            })
+    }
+
+
+
     render() {
         return (
-            <View>
+            <View style={mainStyle.container}>
                 <TextInput
-                    style={styles.search}
+                    style={mainStyle.search}
                     underlineColorAndroid='transparent'
                     value={this.state.city}
                     onChangeText={(text) => this.setCity(text)}
                     />
+                <Button title={'Rechercher ...'} onPress = {() => this.submit()} />
             </View>
         )
     }
-
 }
 
-const styles = StyleSheet.create({
-    search : {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1
-    }
-})
+export default Search

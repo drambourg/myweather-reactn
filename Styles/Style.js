@@ -1,23 +1,28 @@
 import {StyleSheet} from 'react-native'
 
-const mainColor = "#ffa600"
-const secondaryColor = "#00a8dd"
+export const myStyleColor = {
+     mainColor : "#ffa600",
+     mainColorAlternative : "#f0f0f0",
+    secondaryColor : "#00a8dd",
+    bodyColor : "#f8f8f8",
+    textColor : "#252525",
+}
 
 export default StyleSheet.create({
     container: {
-
+        backgroundColor: myStyleColor.bodyColor
     },
     header: {
-        backgroundColor: mainColor
+        backgroundColor: myStyleColor.mainColor
     },
     headerTitle: {
-        color: "#ffffff",
+        color: myStyleColor.bodyColor,
         fontSize : 22,
         alignItems: 'center',
         justifyContent: 'center',
     },
     button: {
-        backgroundColor: secondaryColor,
+        margin : 20,
     },
     search:{
         height: 40,
@@ -27,7 +32,7 @@ export default StyleSheet.create({
         padding : 5,
     },
     loader:{
-        color: mainColor,
+        color: myStyleColor.mainColor,
     }
 
 })

@@ -33,10 +33,11 @@ class Search extends React.Component {
                 <TextInput
                     style={mainStyle.search}
                     underlineColorAndroid='transparent'
+                    onSubmitEditing = {() => this.submit()}
                     value={this.state.city}
                     onChangeText={(text) => this.setCity(text)}
                     />
-                <Button title={'Rechercher ...'} onPress = {() => this.submit()} />
+                <Button style={mainStyle.button} title={'Rechercher ...'} onPress = {() => this.submit()} />
             </View>
         )
     }

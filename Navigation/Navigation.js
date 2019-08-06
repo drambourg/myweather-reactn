@@ -7,16 +7,6 @@ import List from "../Component/List";
 import mainStyle from "../Styles/Style";
 
 const SearchStackNavigator = createStackNavigator({
-    Result : {
-        screen : List,
-        navigationOptions : ({navigation}) => {
-            return {
-                // title: 'Météo / ' + navigation.state.params.city,
-                headerStyle : mainStyle.header,
-                headerTitleStyle : mainStyle.headerTitle,
-            }
-        }
-    },
     Search: {
         screen: Search,
         navigationOptions: {
@@ -25,7 +15,16 @@ const SearchStackNavigator = createStackNavigator({
             headerTitleStyle : mainStyle.headerTitle,
         }
     },
-
+    Result : {
+        screen : List,
+        navigationOptions : ({navigation}) => {
+           return {
+               title: 'Météo / ' + navigation.state.params.city,
+               headerStyle : mainStyle.header,
+               headerTitleStyle : mainStyle.headerTitle,
+           }
+        }
+    }
 })
 
 const AboutStackNavigator = createStackNavigator({
